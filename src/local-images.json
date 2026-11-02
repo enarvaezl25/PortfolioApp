@@ -1,0 +1,227 @@
+{
+"congreso-1": {
+"w": 1766,
+"h": 1251,
+"alpha": false
+},
+"congreso-2": {
+"w": 1014,
+"h": 1007,
+"alpha": false
+},
+"congreso-3": {
+"w": 522,
+"h": 740,
+"alpha": false
+},
+"congreso-4": {
+"w": 504,
+"h": 544,
+"alpha": false
+},
+"informe-1": {
+"w": 666,
+"h": 947,
+"alpha": true
+},
+"informe-2": {
+"w": 1189,
+"h": 697,
+"alpha": true
+},
+"catalogo-1": {
+"w": 1763,
+"h": 1174,
+"alpha": true
+},
+"tecno-post-1": {
+"w": 505,
+"h": 505,
+"alpha": false
+},
+"tecno-post-2": {
+"w": 503,
+"h": 503,
+"alpha": false
+},
+"tecno-post-3": {
+"w": 505,
+"h": 505,
+"alpha": false
+},
+"tecno-post-4": {
+"w": 511,
+"h": 511,
+"alpha": false
+},
+"tecno-post-5": {
+"w": 513,
+"h": 513,
+"alpha": false
+},
+"tecno-post-6": {
+"w": 513,
+"h": 513,
+"alpha": false
+},
+"best-post-1": {
+"w": 538,
+"h": 538,
+"alpha": false
+},
+"best-post-2": {
+"w": 516,
+"h": 537,
+"alpha": false
+},
+"best-post-3": {
+"w": 518,
+"h": 514,
+"alpha": true
+},
+"best-post-4": {
+"w": 517,
+"h": 516,
+"alpha": false
+},
+"best-post-5": {
+"w": 528,
+"h": 528,
+"alpha": false
+},
+"best-post-6": {
+"w": 516,
+"h": 516,
+"alpha": false
+},
+"best-post-7": {
+"w": 522,
+"h": 522,
+"alpha": false
+},
+"best-post-8": {
+"w": 522,
+"h": 522,
+"alpha": false
+},
+"best-post-9": {
+"w": 522,
+"h": 525,
+"alpha": false
+},
+"best-post-10": {
+"w": 530,
+"h": 523,
+"alpha": false
+},
+"best-post-11": {
+"w": 519,
+"h": 519,
+"alpha": false
+},
+"best-post-12": {
+"w": 519,
+"h": 515,
+"alpha": false
+},
+"msg-post-1": {
+"w": 542,
+"h": 542,
+"alpha": false
+},
+"msg-post-2": {
+"w": 544,
+"h": 544,
+"alpha": false
+},
+"msg-post-3": {
+"w": 623,
+"h": 623,
+"alpha": false
+},
+"msg-post-4": {
+"w": 623,
+"h": 623,
+"alpha": false
+},
+"msg-post-5": {
+"w": 547,
+"h": 540,
+"alpha": false
+},
+"ibw-1": {
+"w": 972,
+"h": 401,
+"alpha": true
+},
+"ibw-2": {
+"w": 675,
+"h": 493,
+"alpha": true
+},
+"ibw-3": {
+"w": 716,
+"h": 560,
+"alpha": true
+},
+"ibw-4": {
+"w": 989,
+"h": 437,
+"alpha": true
+},
+"ibw-5": {
+"w": 2000,
+"h": 1333,
+"alpha": true
+},
+"ibw-6": {
+"w": 2000,
+"h": 1334,
+"alpha": true
+},
+"web-arana": {
+"w": 1681,
+"h": 1120,
+"alpha": true
+},
+"web-union": {
+"w": 1342,
+"h": 1192,
+"alpha": false
+},
+"web-tecnomessages": {
+"w": 1431,
+"h": 952,
+"alpha": false
+},
+"web-kamilas-1": {
+"w": 1094,
+"h": 783,
+"alpha": false
+},
+"web-kamilas-2": {
+"w": 634,
+"h": 585,
+"alpha": true
+},
+"web-biblioteca": {
+"w": 1487,
+"h": 866,
+"alpha": true
+},
+"web-revistas": {
+"w": 1487,
+"h": 866,
+"alpha": true
+},
+"web-best": {
+"w": 1825,
+"h": 1217,
+"alpha": true
+},
+"enoc": {
+"w": 1090,
+"h": 1280,
+"alpha": false
+}
+}

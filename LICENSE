@@ -2,6 +2,11 @@ MIT License
 
 Copyright (c) 2026 enarvaezl25
 
+Scope: this license covers only the source code (build.js, src/main.js,
+src/styles.css and netlify.toml). Images, logos, texts and project data in
+public/ and src/ are not licensed under these terms; all rights reserved.
+See README.md.
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights

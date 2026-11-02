@@ -70,7 +70,11 @@ const page = ({ title, desc, body, accent, on, soft, home, image }) => `<!doctyp
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:type" content="website">
-${image && process.env.URL ? `<meta property="og:image" content="${esc(process.env.URL + image)}">` : ''}
+${image && process.env.URL ? `<meta property="og:image" content="${esc(process.env.URL + image)}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">` : ''}
 <meta name="theme-color" content="${accent || '#ECEFF1'}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -265,7 +269,7 @@ write('index.html', page({
   desc: site.description,
   body: home(),
   home: true,
-  image: projects[0].cover.src,
+  image: '/og/home.jpg',
 }));
 
 projects.forEach((p, i) => {
@@ -274,7 +278,7 @@ projects.forEach((p, i) => {
     desc: `${p.kind}. ${p.tagline}`,
     body: caseBody(p, i),
     accent: p.accent, on: p.on, soft: p.soft,
-    image: p.cover.src,
+    image: `/og/${p.slug}.jpg`,
   }));
 });
 

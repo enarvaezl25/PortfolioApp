@@ -11,6 +11,23 @@
   tick();
   setInterval(tick, 20000);
 
+  /* Menú: línea inferior al desplazarse y sección actual marcada */
+  const nav = $('[data-nav]');
+  const onNavScroll = () => nav.classList.toggle('is-scrolled', scrollY > 8);
+  addEventListener('scroll', onNavScroll, { passive: true });
+  onNavScroll();
+  const navLinks = $$('nav a:not(.nav__cta)', nav).filter((a) => a.hash && $(a.hash) && a.pathname === location.pathname);
+  if (navLinks.length) {
+    const navSpy = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        const link = navLinks.find((a) => a.hash === `#${e.target.id}`);
+        if (e.isIntersecting) link.setAttribute('aria-current', 'true');
+        else link.removeAttribute('aria-current');
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    navLinks.forEach((a) => navSpy.observe($(a.hash)));
+  }
+
   /* Aparición al hacer scroll */
   const revealIO = new IntersectionObserver((entries) => {
     entries.forEach((e) => {

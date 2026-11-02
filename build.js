@@ -155,15 +155,13 @@ const home = () => {
   <section class="work" id="trabajo">
     <div class="work__head">
       <h2 class="display">Trabajo</h2>
-      <div class="work__tools">
-        <div class="filters" role="group" aria-label="Filtrar por disciplina">
-          <button type="button" data-filter="all" aria-pressed="true">Todo <sup>${counts.all}</sup></button>
-          ${Object.entries(CATS).map(([k, v]) => `<button type="button" data-filter="${k}" aria-pressed="false">${v} <sup>${counts[k]}</sup></button>`).join('')}
-        </div>
-        <div class="views" role="group" aria-label="Cambiar vista">
-          <button type="button" data-view="grid" aria-pressed="true">Cuadrícula</button>
-          <button type="button" data-view="list" aria-pressed="false">Lista</button>
-        </div>
+      <div class="views" role="group" aria-label="Cambiar vista">
+        <button type="button" data-view="grid" aria-pressed="true" aria-label="Ver en cuadrícula" title="Cuadrícula"><svg viewBox="0 0 18 18" aria-hidden="true"><path fill="currentColor" d="M2 2h6v6H2zM10 2h6v6h-6zM2 10h6v6H2zM10 10h6v6h-6z"/></svg></button>
+        <button type="button" data-view="list" aria-pressed="false" aria-label="Ver en lista" title="Lista"><svg viewBox="0 0 18 18" aria-hidden="true"><path fill="currentColor" d="M2 3h14v2H2zM2 8h14v2H2zM2 13h14v2H2z"/></svg></button>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrar por disciplina">
+        <button type="button" data-filter="all" aria-pressed="true">Todo<sup>${counts.all}</sup></button>
+        ${Object.entries(CATS).map(([k, v]) => `<button type="button" data-filter="${k}" aria-pressed="false">${v}<sup>${counts[k]}</sup></button>`).join('')}
       </div>
     </div>
     <ul class="cards" data-cards>${ordered.map(card).join('')}</ul>

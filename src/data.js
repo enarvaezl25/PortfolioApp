@@ -17,13 +17,14 @@ const site = {
   description: 'Portfolio de Enoc Narváez, diseñador visual y UX/UI en Managua, Nicaragua. Interfaces, sitios web, identidad de marca y diseño editorial.',
   bio: 'Diseño interfaces, marcas y piezas gráficas con más de 5 años de experiencia en proyectos institucionales, educativos y comerciales, en Nicaragua y a nivel internacional.',
   clients: ['Grupo LAFISE', 'IBW Nicaragua', 'TK Analytic', 'UNAN-Managua', 'All Florida Marketing', 'Tecnocomp', 'INATEC', 'Best Brand Pacas', 'INCODEGSA', 'Children Believe'],
+  // Tarjetas de cifras: tag es la categoría, label el resultado y source el proyecto
   impact: [
-    { n: 60, pre: '+', suf: '%', label: 'de tráfico web frente al sitio anterior', source: 'Biblioteca Central UNAN-Managua', slug: 'biblioteca-unan' },
-    { n: 100, pre: '+', suf: '%', label: 'de tráfico móvil con la nueva estructura UX', source: 'Best Brand Pacas', slug: 'best-brand-pacas' },
-    { n: 15, pre: '+', suf: '%', label: 'de conversiones digitales', source: 'Best Brand Pacas', slug: 'best-brand-pacas' },
-    { n: 35, pre: '+', suf: '%', label: 'de participación estudiantil en entornos virtuales', source: 'Cursos e-learning, UNAN-Managua' },
-    { n: 40, pre: '−', suf: '%', label: 'de reducción máxima en tiempos de entrega editorial', source: 'Revistas, boletines y catálogos', slug: 'editorial' },
-    { n: 4, pre: '+', suf: '%', label: 'en ventas con publicidad y material gráfico', source: 'IBW Nicaragua', slug: 'ibw-nicaragua' },
+    { tag: 'Tráfico web', n: 60, pre: '+', suf: '%', label: 'de visitas frente al sitio anterior', source: 'Biblioteca Central UNAN-Managua', slug: 'biblioteca-unan' },
+    { tag: 'Tráfico móvil', n: 100, pre: '+', suf: '%', label: 'de visitas desde el móvil con la nueva estructura UX', source: 'Best Brand Pacas', slug: 'best-brand-pacas' },
+    { tag: 'Conversión', n: 15, pre: '+', suf: '%', label: 'de conversiones digitales', source: 'Best Brand Pacas', slug: 'best-brand-pacas' },
+    { tag: 'Participación', n: 35, pre: '+', suf: '%', label: 'de participación estudiantil en entornos virtuales', source: 'Cursos e-learning, UNAN-Managua' },
+    { tag: 'Entrega', n: 40, pre: '−', suf: '%', label: 'en tiempos de entrega editorial, como máximo', source: 'Revistas, boletines y catálogos', slug: 'editorial' },
+    { tag: 'Ventas', n: 4, pre: '+', suf: '%', label: 'en ventas con publicidad y material gráfico', source: 'IBW Nicaragua', slug: 'ibw-nicaragua' },
   ],
   process: [
     { title: 'Investigar', body: 'Entiendo a las personas usuarias, analizo referentes del sector y defino los flujos de navegación antes de abrir el archivo de diseño.', tags: ['Investigación de usuarios', 'Análisis competitivo', 'User journey'] },

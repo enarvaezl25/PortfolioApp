@@ -186,10 +186,9 @@
     move();
   }
 
-  /* Etiqueta que sigue al cursor sobre las tarjetas */
+  /* Indicador que sigue al puntero sobre las portadas de la cuadrícula */
   const cursor = $('[data-cursor]');
   if (cursor && finePointer && !reduced) {
-    document.documentElement.classList.add('has-cursor');
     let tx = 0, ty = 0, cx = 0, cy = 0;
     addEventListener('pointermove', (e) => { tx = e.clientX; ty = e.clientY; }, { passive: true });
     const move = () => {

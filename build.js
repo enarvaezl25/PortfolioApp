@@ -95,7 +95,7 @@ ${footer()}
   <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Imagen siguiente">→</button>
   <span class="lightbox__count mono" aria-live="polite"></span>
 </div>
-<div class="cursor" data-cursor aria-hidden="true"><span>Ver caso</span></div>
+<div class="cursor" data-cursor aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="2"/></svg></span></div>
 <script src="/main.js" defer></script>
 </body>
 </html>`;
@@ -172,7 +172,10 @@ const home = () => {
   <section class="impact" id="impacto">
     <h2 class="display" data-reveal>Diseño que se nota en los números</h2>
     <ul class="impact__grid">
-      ${site.impact.map((s) => `<li data-reveal><div class="stat__n" data-count="${s.n}" data-pre="${esc(s.pre)}" data-suf="${esc(s.suf)}">${esc(s.pre)}${s.n}${esc(s.suf)}</div><p>${esc(s.label)}</p>${s.slug ? `<a class="mono" href="/proyectos/${s.slug}/">${esc(s.source)} →</a>` : `<span class="mono">${esc(s.source)}</span>`}</li>`).join('')}
+      ${site.impact.map((s, i) => {
+        const inner = `<span class="impact__tag">${esc(s.tag)}</span><span class="impact__n" data-count="${s.n}" data-pre="${esc(s.pre)}" data-suf="${esc(s.suf)}">${esc(s.pre)}${s.n}${esc(s.suf)}</span><span class="impact__label">${esc(s.label)}</span><span class="impact__source">${esc(s.source)}${s.slug ? ' →' : ''}</span>`;
+        return `<li class="impact__card impact__card--${i + 1}" data-reveal>${s.slug ? `<a href="/proyectos/${s.slug}/">${inner}</a>` : `<div>${inner}</div>`}</li>`;
+      }).join('')}
     </ul>
   </section>
 

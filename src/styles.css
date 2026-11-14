@@ -107,7 +107,8 @@ a:hover > .arrow { transform: translate(2px, -2px); }
 .card__tile--contain img { object-fit: contain; padding: 7%; }
 .card a:hover .card__tile img { transform: scale(1.035); }
 .card__meta { display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; padding-top: 12px; }
-.card__meta h3 { font: 600 clamp(21px, 2.1vw, 30px)/1.1 var(--display); letter-spacing: -.02em; }
+.card__meta h3 { justify-self: start; font: 600 clamp(21px, 2.1vw, 30px)/1.1 var(--display); letter-spacing: -.02em; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat; transition: background-size .45s var(--ease); }
+.card a:hover .card__meta h3 { background-size: 100% 1.5px; }
 .card__meta p { grid-column: 1; grid-row: 2; color: var(--ink-2); font-size: 15.5px; }
 .card__meta .mono:nth-of-type(1) { grid-column: 2; grid-row: 1; text-align: right; align-self: center; color: var(--ink-2); }
 .card__meta .mono:nth-of-type(2) { grid-column: 2; grid-row: 2; text-align: right; color: var(--ink-2); }
@@ -124,20 +125,34 @@ a:hover > .arrow { transform: translate(2px, -2px); }
 .preview.is-on { opacity: 1; }
 .preview img { width: 100%; height: 100%; object-fit: cover; }
 
+/* Indicador que acompaña al puntero sobre las portadas: el puntero sigue visible */
 .cursor { position: fixed; left: 0; top: 0; z-index: 35; pointer-events: none; }
-.cursor span { display: grid; place-items: center; width: 92px; height: 92px; margin: -46px 0 0 -46px; border-radius: 50%; background: var(--orange); color: #fff; font: 400 12.5px/1 var(--mono); transform: scale(0); transition: transform .35s var(--ease); }
-.cursor.is-on span { transform: scale(1); }
-.has-cursor .card__tile { cursor: none; }
+.cursor span { display: grid; place-items: center; width: 48px; height: 48px; margin: 14px 0 0 14px; border-radius: 50%; background: var(--ink); color: #fff; box-shadow: 0 8px 24px rgb(6 32 47 / .28); opacity: 0; transform: scale(.4); transition: opacity .25s, transform .45s cubic-bezier(.3, 1.4, .5, 1); }
+.cursor svg { width: 18px; height: 18px; transform: rotate(-45deg); transition: transform .45s var(--ease) .05s; }
+.cursor.is-on span { opacity: 1; transform: scale(1); }
+.cursor.is-on svg { transform: none; }
 
 /* Impacto */
 .impact { background: var(--brand); color: #fff; padding: clamp(70px, 10vw, 150px) var(--gutter); }
-.impact .display { max-width: 12ch; }
-.impact__grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(40px, 6vw, 90px); border-top: 1px solid rgb(255 255 255 / .28); }
-.impact__grid li { padding: 22px 20px 34px 0; border-bottom: 1px solid rgb(255 255 255 / .28); display: flex; flex-direction: column; gap: 8px; }
-.impact__grid .stat__n { font: 500 clamp(52px, 7.4vw, 112px)/1 var(--display); font-variation-settings: "opsz" 96; letter-spacing: -.04em; font-feature-settings: "tnum"; }
-.impact__grid p { max-width: 26ch; }
-.impact__grid .mono { margin-top: auto; padding-top: 12px; color: rgb(255 255 255 / .72); }
-.impact__grid a:hover { color: #fff; text-decoration: underline; }
+.impact .display { max-width: 20ch; }
+/* Tarjetas: una destacada en naranja y el resto en tintes de la paleta, con la cifra en degradado */
+.impact__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 1.2vw, 18px); margin-top: clamp(40px, 6vw, 80px); }
+.impact__card { --card: var(--paper); --n-from: var(--ink); --n-to: var(--brand); border-radius: 22px; background: var(--card); color: var(--ink); transition: transform .45s var(--ease); }
+.impact__card > a, .impact__card > div { display: flex; flex-direction: column; height: 100%; min-height: clamp(250px, 24vw, 330px); padding: clamp(22px, 2.6vw, 40px); border-radius: inherit; }
+.impact__card:has(a):hover { transform: translateY(-4px); }
+/* naranja profundo de la marca con texto blanco: 4.96:1, AA también para el texto pequeño */
+.impact__card--1 { --card: #C4461A; --n-from: #FFFFFF; --n-to: #FFD3BF; color: #fff; }
+.impact__card--2 { --card: #E1EAF0; --n-from: var(--ink); --n-to: #1F6E96; }
+.impact__card--3 { --card: #F8ECE4; --n-from: var(--ink); --n-to: #C2481C; }
+.impact__card--4 { --card: #D7E6EE; --n-from: var(--brand); --n-to: #2E86AE; }
+.impact__card--5 { --card: var(--paper); --n-from: var(--ink); --n-to: var(--brand); }
+.impact__card--6 { --card: #F3E2D7; --n-from: #2A1A12; --n-to: #B4441C; }
+.impact__tag { font: 600 12.5px/1.3 var(--body); letter-spacing: .1em; text-transform: uppercase; }
+.impact__n { margin-top: auto; padding-top: 28px; font: 600 clamp(64px, 7.6vw, 118px)/.95 var(--display); font-variation-settings: "opsz" 96; letter-spacing: -.045em; font-feature-settings: "tnum"; color: var(--n-to); background: linear-gradient(100deg, var(--n-from) 30%, var(--n-to)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; padding-bottom: .04em; }
+.impact__label { margin-top: 10px; max-width: 24ch; font: 600 clamp(19px, 1.7vw, 25px)/1.15 var(--display); letter-spacing: -.015em; text-wrap: balance; }
+.impact__source { margin-top: 10px; font-size: 15.5px; color: rgb(6 32 47 / .72); }
+.impact__card--1 .impact__source, .impact__card--1 > a:hover .impact__source { color: #fff; }
+.impact__card > a:hover .impact__source { color: var(--ink); text-decoration: underline; }
 
 /* Proceso */
 .process { padding: clamp(70px, 10vw, 150px) var(--gutter); }
@@ -308,6 +323,7 @@ a:hover > .arrow { transform: translate(2px, -2px); }
 }
 
 @media (max-width: 1000px) {
+  .impact__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .row a { grid-template-columns: 36px minmax(0, 1fr) 80px; }
   .row__kind, .row__cat { display: none; }
   .preview { display: none; }
@@ -329,8 +345,9 @@ a:hover > .arrow { transform: translate(2px, -2px); }
   .nav__logo span { display: none; }
   .hero__name { font-size: 26.5vw; }
   .hero__foot { flex-wrap: wrap; }
-  .impact__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .impact__grid .stat__n { font-size: clamp(40px, 13vw, 64px); }
+  .impact__grid { grid-template-columns: minmax(0, 1fr); }
+  .impact__card > a, .impact__card > div { min-height: 230px; }
+  .impact__n { font-size: clamp(56px, 19vw, 84px); }
   .process__list { flex-direction: column; height: auto; }
   .process__list > li { flex: none; }
   .process__list > li:not(.is-open) .process__title { writing-mode: horizontal-tb; transform: none; margin: 0; }

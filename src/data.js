@@ -14,6 +14,8 @@ const site = {
   email: 'enocnarvaez@gmail.com',
   behance: 'https://www.behance.net/israelnarvaez',
   linkedin: 'https://www.linkedin.com/in/enarvaezl',
+  // Cloudflare Web Analytics: el token es público, va visible en cada página
+  analyticsToken: '4c850b0926734289b17713874fc85c66',
   description: 'Portfolio de Enoc Narváez, diseñador visual y UX/UI en Managua, Nicaragua. Interfaces, sitios web, identidad de marca y diseño editorial.',
   bio: 'Diseño interfaces, marcas y piezas gráficas con más de 5 años de experiencia en proyectos institucionales, educativos y comerciales, en Nicaragua y a nivel internacional.',
   clients: ['Grupo LAFISE', 'IBW Nicaragua', 'TK Analytic', 'UNAN-Managua', 'All Florida Marketing', 'Tecnocomp', 'INATEC', 'Best Brand Pacas', 'INCODEGSA', 'Children Believe'],

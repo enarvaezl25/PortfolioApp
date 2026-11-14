@@ -97,8 +97,14 @@ ${footer()}
 </div>
 <div class="cursor" data-cursor aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="2"/></svg></span></div>
 <script src="/main.js" defer></script>
+${analytics}
 </body>
 </html>`;
+
+// Solo en las publicaciones de Netlify (NETLIFY=true), para no contar las visitas de la vista local
+const analytics = process.env.NETLIFY && site.analyticsToken
+  ? `<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${site.analyticsToken}"}'></script>`
+  : '';
 
 const coverStyle = (p) => `--tile:${p.coverBg || p.accent};--tile-on:${p.coverBg ? p.accent : p.on}`;
 // recorta la franja superior de portadas que son láminas con encabezado, sin tocar la imagen original
